@@ -1,0 +1,9 @@
+.element__group-title {
+    margin: 0;
+    padding: 25px 15px 31px 21px;
+    max-width: 282px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

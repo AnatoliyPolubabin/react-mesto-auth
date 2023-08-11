@@ -1,0 +1,5 @@
+.element__group-title-like-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}

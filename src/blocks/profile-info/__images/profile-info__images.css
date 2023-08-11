@@ -1,0 +1,13 @@
+.profile-info__images {
+    width: 10px;
+    height: 10px;
+    margin: 7px 7px;
+    background-size: cover;
+}
+@media (max-width: 320px) {
+    .profile-info__images {
+        width: 7.5px;
+        height: 7.5px;
+        margin: 4px 4px;
+    }
+}

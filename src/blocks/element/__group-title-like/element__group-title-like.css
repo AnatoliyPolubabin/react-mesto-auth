@@ -1,0 +1,15 @@
+.element__group-title-like {
+    background: url('../../../images/like.svg');
+    width: 22px;
+    height: 19px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-size: cover;
+    transition: 0.3s;
+}
+.element__group-title-like:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.popup__container-button {
+    font-family: 'Inter', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    width: 358px;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 13px 36px 27px 36px;
+    border-radius: 2px;
+    border: none;
+}
+.popup__container-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.popup__container-button.popup__container-button_disabled {
+    opacity: 0.2;
+    color: #000000;
+    border: 1px solid #000000;
+    background: #FFFFFF;
+    
+}
+@media (max-width: 600px) {
+    .popup__container-button {
+        width: 238px;
+        height: 46px;
+        margin: 45px 22px 15px 22px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

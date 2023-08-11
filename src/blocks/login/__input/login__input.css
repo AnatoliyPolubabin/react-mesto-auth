@@ -1,0 +1,22 @@
+.login__input {
+    display: block;
+    margin: 0 0 30px 13px;
+    padding: 0;
+    width: 358px;
+    background-color: #000;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.login__input::placeholder {
+    color: #CCCCCC;
+}
+
+.login__input:last-of-type {
+    margin: 0 0 0 13px;
+}
