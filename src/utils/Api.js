@@ -8,8 +8,8 @@ class Api {
       method: 'DELETE',
       headers: this._headers
     })
-      .then(res => this._checkResponse(res));
-  }
+    .then(res => this._checkResponse(res));
+}
   changeLikeCardStatus(cardId, isLiked) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: `${!isLiked ? 'DELETE' : 'PUT'}`,
@@ -69,6 +69,8 @@ class Api {
       body: JSON.stringify(data)
     }).then(this._checkResponse)
   }
+
+
   _checkResponse(res) {
     // тут проверка ответа
     if (res.ok) {
@@ -76,7 +78,7 @@ class Api {
     }
 
     return Promise.reject(`Ошибка: ${res.status}`)
-  }
+}
 }
 
 const api = new Api({

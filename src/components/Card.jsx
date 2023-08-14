@@ -10,24 +10,24 @@ export default function Card(props) {
 
     function handleCardClick() {
         props.onCardClick(props.card);
-    }
+      }
 
     function handelLikeClick() {
         props.onCardLike(props.card);
-    }
+      }
 
     function handleDeleteClick() {
         console.log(props.card)
         props.onCardDelete(props.card);
-    }
+      }
 
     return (
         <div className="element">
             <div className="element__image-button">
-                {isOwn && <button className='element__group-title-delete' onClick={handleDeleteClick} />}
-                <img className="element__image"
-                    src={(`${props.card.link}`)} alt={`${props.card.name}`}
-                    onClick={handleCardClick} />
+                {isOwn && <button className='element__group-title-delete'  onClick={handleDeleteClick} />}
+                <img className="element__image" 
+                src={(`${props.card.link}`)} alt={`${props.card.name}`} 
+                onClick={handleCardClick}/>
             </div>
             <div className="element__group-title">
                 <h2 className="element__title">{props.card.name}</h2>

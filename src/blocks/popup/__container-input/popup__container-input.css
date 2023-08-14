@@ -23,6 +23,7 @@
     border-bottom:1px solid #FF0000;
 }
 
+
 @media (max-width: 600px) {
     .popup__container-input {
         width: 238px;
