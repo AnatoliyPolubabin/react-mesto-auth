@@ -1,5 +1,12 @@
 export const BASE_URL = 'https://auth.nomoreparties.co';
 
+const getResponseData = (res) => {
+  if (!res.ok) {
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+  return res.json();
+};
+
 export function register(email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
@@ -7,18 +14,7 @@ export function register(email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then((response) => {
-      if (response.status === 201) {
-       return response.json();
-        } else {
-          response.json().then((data) => console.error(data.error));
-          throw new Error();
-        }
-      })
-      .then((res) => {
-        return res;
-      })
+  }).then(getResponseData);
 }
 
 export function authorize(email, password) {
@@ -29,21 +25,13 @@ export function authorize(email, password) {
     },
     body: JSON.stringify({ email, password }),
   })
-   .then((response) => {
-   if (response.status === 200) {
-    return response.json();
-      } else {
-        response.json().then((data) => console.error(data.message));
-        throw new Error();
-      }
-    })
+    .then(getResponseData)
     .then((data) => {
       if (data.token) {
         localStorage.setItem('jwt', data.token);
         return data;
       }
-    })
-    .catch((err) => console.log(err));
+    });
 }
 
 export function getToken(jwt) {
@@ -53,7 +41,5 @@ export function getToken(jwt) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${jwt}`,
     },
-  })
-    .then((res) => res.json())
-    .then((data) => data);
+  }).then(getResponseData);
 }
